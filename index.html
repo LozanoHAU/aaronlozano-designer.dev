@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aaron Lozano - Web Developer & Graphic Designer Portfolio</title>
+    <meta property="og:title" content="Aaron Lozano - Web Developer & Graphic Designer Portfolio">
+    <meta property="og:description" content="Passionate web developer and graphic designer specializing in front-end development and UI/UX design. Creating meaningful digital presence.">
+    <meta property="og:type" content="website">
+    <link rel="icon" href="images/icologo.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Finlandica:ital,wght@0,400..700;1,400..700&family=National+Park:wght@200..800&family=Pompiere&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.min.css">
+    <link rel="stylesheet" href="navfoot.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo"><img src="images/navlogo.webp" alt="WebsiteLogo" style="width: 100%; height:45px;padding-left: 20px;margin-bottom:-4px"></div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="blog.html">Blogs</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-left">
+                <div class="hero-block">
+                    <img src="images/home/homeherotextoffic.webp" style="width:96%; height: 100%;">
+                </div>
+                <h2>Hi there. I'm Aaron Lozano.</h2>
+                <p class="hero-subtitle"><i>Web Developer | UI/UX Enthusiast | Graphic Designer</i></p>
+                <p class="hero-text">I'm a passionate, creative individual who aspires in turning ideas into the bold and meaningful. It's all about making people stop and look twice, <em>THAT</em> is my brand. Whether it's an identity, a UI concept, or a website — I pour thought and heart into every design.  </p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary">Hire Me</button>
+                    <a href="portfolio.html"><button class="btn btn-secondary">View Portfolio</button></a>
+                </div>
+            </div>
+            
+            <div class="hero-right">
+                <div class="portfolio-carousel">
+                    <div class="carousel-arrow left-arrow" onclick="moveCarousel(-1)">
+                        ‹
+                    </div>
+                    
+                    <div class="portfolio-circle-wrapper">
+                        <div class="portfolio-circle center" data-index="0" onclick="if(this.classList.contains('center')) window.location.href='portfolio.html'">
+                            <div class="portfolio-inner"><img src="images/home/carouselportfolio2.webp" style="width: 100%; height: 100%; object-fit: fit;"><h1 class="circle-title">PORTFOLIO</h1></div>
+                        </div>
+                        <div class="portfolio-circle right" data-index="1" onclick="if(this.classList.contains('center')) window.location.href='blogs/blog1.html'">
+                            <div class="portfolio-inner"><img src="images/home/carouselblog.webp" style="width: 100%; height: 100%; object-fit: fit;"><h1 class="circle-title">BLOGS</h1></div>
+                        </div>
+                        <div class="portfolio-circle left"  data-index="2" onclick="if(this.classList.contains('center')) window.open('https://github.com/LozanoHAU', '_blank')">
+                            <div class="portfolio-inner"><img src="images/home/carouselgithub2.webp" style="width: 100%; height: 100%; object-fit: fit;"><h1 class="circle-title">GITHUB</h1></div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-arrow right-arrow" onclick="moveCarousel(1)">
+                        ›
+                    </div>
+                </div>
+                
+                <div class="dot-indicators">
+                    <div class="dot active" onclick="goToSlide(0)"></div>
+                    <div class="dot" onclick="goToSlide(1)"></div>
+                    <div class="dot" onclick="goToSlide(2)"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="data-section">
+        <div class="data-container">
+            <div class="data-card filled" draggable="true" data-chip="about">
+                <img src="images/home/cardAbou.webp" alt="about memory card" height="100%" width="100%">
+            </div>
+            <div class="data-card filled" draggable="true" data-chip="resume">
+                <img src="images/home/cardResum.webp" alt="resume memory card" height="100%" width="100%">
+            </div>
+            <div class="data-card filled" draggable="true" data-chip="contact">
+                <img src="images/home/cardContact.webp" alt="about memory card" height="100%" width="100%">    
+            </div>
+            <div class="data-card empty" id="dropZone">
+                <div class="chip-text">INSERT CHIP<br/>HERE</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="no-data-section">
+        <div class="no-data-container">
+            <div class="no-data-box" id="contentDisplay">
+                <div class="no-data-text" id="noDataText">NO DATA AVAILABLE</div>
+                
+                <div class="about-content-wrapper" id="aboutContent">
+                    <section class="gallery-section">
+                        <div class="gallery-main">
+                            <img src="images/home/aboutimg1_50.webp" alt="image of creator 1" style="width:100%; height:auto;">
+                        </div>
+                        <div class="gallery-sidebar">
+                            <div class="gallery-item">
+                                <img src="images/home/aboutimg2.webp" alt="image of creator 2" style="width:100%; height:auto;">
+                            </div>
+                            <div class="gallery-item" style="background-image: url(images/home/aboutimg3official.webp);background-position:center;background-repeat:no-repeat;background-size:cover;" alt="image of creator 3">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="content-section">
+                        <div class="about-content">
+                            <h1>About Me</h1>
+                            <p> I sit at the intersection of visual storytelling and functional code. As a Graphic Designer turned Web Developer, I don't build websites; I create digital canvases designed to capture attention. My philosophy is straightforward: when viewers see the work, their reaction should be <em>"whoa."</em> I aspire to turn abstract ideas into tangible, meaningful design that make users stop and look twice. Whether I am sketching an identity, wireframing a UI concept, or writing clean front-end code, I pour thought and heart into every pixel and every letters.  </p>
+                            <p>I bridge the gap between "it looks great" and "it works perfectly," ensuring that the final product is as intuitive as it is impactful.</p>
+                        </div>
+
+                        <div class="skills-section">
+                            <div class="skill-group">
+                                <h3>Frontend Skills</h3>
+                                <div class="skill-content">
+                                    <div class="skill-icons">
+                                        <div class="skill-icon"><img src="images/home/skillsicons/htmlfive.png" alt="html5 logo"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/css.png" alt="css logo" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/javascript2.png" alt="javascript logo" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/nodejs.png" alt="nodeJS logo" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/react.png" alt="react logo" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/angular.gif" alt="angular logo" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/python.png" alt="python logo" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/java.png" alt="java logo" style="max-height:90%"></div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+
+                            <div class="skill-group">
+                                <h3>Backend Skills</h3>
+                                <div class="skill-content">
+                                    <div class="skill-icons">
+                                        <div class="skill-icon"><img src="images/home/skillsicons/photoshop.png" alt="photoshop icon" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/canva.png" alt="canva icon" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/figma.png" alt="figma icon" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/git.png" alt="git icon" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/vscode.png" alt="vscode icon" style="max-height:90%"></div>
+                                        <div class="skill-icon"><img src="images/home/skillsicons/mongodb.png" alt="mongodb icon" style="max-height:90%"></div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+
+                            <div class="skill-group" id="soft-skills-id">
+                                <h3>Soft Skills</h3>
+                                <div class="skill-content">
+                                    <div class="soft-skills">
+                                        <div class="soft-skill-tag">Active Listening</div>
+                                        <div class="soft-skill-tag">Coachability</div>
+                                        <div class="soft-skill-tag">Disciplined</div>
+                                        <div class="soft-skill-tag">Time Management</div>
+                                        <div class="soft-skill-tag">Attention to Detail</div>
+                                    </div>
+                                    <hr>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <div class="resume-section">
+                            <h2 class="resume-section-title">Certifications</h2>
+                            <div class="resume-section-content">
+                                <p class="certifications-description">The following certifications represent my dedication to mastering industry standards, validating my expertise in both development logic and creative design principles.</p>
+                                <div class="certifications-grid">
+                                    <a href="https://www.freecodecamp.org/certification/lozanowd303/responsive-web-design" target="_blank">
+                                    <div class="cert-item">
+                                        <div class="certification-card">
+                                            <img src="images/home/certifications/cert1.webp" alt="web design certfication" style="width:100%; height:auto;">
+                                        </div>
+                                        <p class="cert-subtitle">Responsive Web Design Certification</p>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="https://www.freecodecamp.org/certification/lozanowd303/javascript-algorithms-and-data-structures" target="_blank">
+                                    <div class="cert-item">
+                                        <div class="certification-card">
+                                            <img src="images/home/certifications/cert2.webp" alt="javascript certfication" style="width:100%; height:auto;">
+                                        </div>
+                                        <p class="cert-subtitle">JavaScript Algorithms & Data Structures</p>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="https://www.freecodecamp.org/certification/lozanowd303/back-end-development-and-apis" target="_blank">
+                                    <div class="cert-item">
+                                        <div class="certification-card">
+                                            <img src="images/home/certifications/cert3.webp" alt="backend and api certfication" style="width:100%; height:auto;">
+                                        </div>
+                                        <p class="cert-subtitle">Back End Development and APIs</p>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="https://www.netacad.com/certificates/?issuanceId=a787fd75-56ec-4f6b-b734-4647d410c0d7" target="_blank">
+                                    <div class="cert-item">
+                                        <div class="certification-card">
+                                            <img src="images/home/certifications/cert4.webp" alt="javascript essentials 1 certfication" style="width:100%; height:auto;">
+                                        </div>
+                                        <p class="cert-subtitle">NetAcad JavaScript Essentials 1 (JSE1)</p>
+                                    </div>
+                                    </a>
+                                    
+                                    <a href="https://app-na2.hubspot.com/academy/achievements/8b7k7z58/en/1/aaron-daniel-lozano/seo" target="_blank">
+                                    <div class="cert-item">
+                                        <div class="certification-card">
+                                            <img src="images/home/certifications/cert5.webp" alt="basic seo certfication" style="width:100%; height:auto;">
+                                        </div>
+                                        <p class="cert-subtitle">Hubspot SEO Fundamentals</p>
+                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="action-section">
+        <div class="action-container">
+            <button class="btn-large btn-outline" onclick="scrollToTop()">BACK TO TOP</button>
+            <button class="btn-large btn-filled" id="ejectBtn" onclick="ejectChip()" disabled>
+                <span>▲</span> EJECT CHIP
+            </button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <h3>l0zd4n3.aa@gmail.com</h3>
+                <div class="social-links">
+                    <a href="https://github.com/LozanoHAU" class="footer-social-icon" target="_blank"><img src="images/footergithub.webp" alt="" style="width:100%; height:auto;"></a>
+                    <a href="https://www.facebook.com/profile.php?id=100094220484168" target="_blank"class="footer-social-icon "><img src="images/footerfb.webp" alt="" style="width:100%; height:auto;"></a>
+                    <a href="https://www.linkedin.com/in/aaron-daniel-lozano-20412b359/" target="_blank" class="footer-social-icon "><img src="images/footerlinkin.webp" alt="" style="width:100%; height:auto;"></a>
+                </div>
+            </div>
+            
+            <div class="footer-right">
+                <button class="message-btn" onclick="handleMessageMeClick()">Message Me</button>
+                <p class="footer-text">Let’s discuss your next big project and turn your creative ideas into reality.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script>
+        let currentIndex = 0;
+        const circles = document.querySelectorAll('.portfolio-circle');
+        const dots = document.querySelectorAll('.dot');
+        const totalSlides = circles.length;
+
+        function updateCarousel() {
+            circles.forEach((circle, index) => {
+                circle.classList.remove('center', 'left', 'right', 'hidden-left', 'hidden-right');
+                
+                const position = (index - currentIndex + totalSlides) % totalSlides;
+                
+                if (position === 0) {
+                    circle.classList.add('center');
+                } else if (position === 1) {
+                    circle.classList.add('right');
+                } else if (position === totalSlides - 1) {
+                    circle.classList.add('left');
+                } else if (position < totalSlides / 2) {
+                    circle.classList.add('hidden-right');
+                } else {
+                    circle.classList.add('hidden-left');
+                }
+            });
+
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        function moveCarousel(direction) {
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            updateCarousel();
+        }
+
+        function goToSlide(index) {
+            currentIndex = index;
+            updateCarousel();
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                moveCarousel(-1);
+            } else if (e.key === 'ArrowRight') {
+                moveCarousel(1);
+            }
+        });
+
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const carousel = document.querySelector('.portfolio-carousel');
+
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            if (touchEndX < touchStartX - 50) {
+                moveCarousel(1);
+            }
+            if (touchEndX > touchStartX + 50) {
+                moveCarousel(-1);
+            }
+        }
+
+        let draggedChip = null;
+        let currentLoadedChip = null;
+        let originalAboutContent = null;
+        let isDraggingFromDropZone = false;
+
+        const dataCards = document.querySelectorAll('.data-card.filled');
+        const dropZone = document.getElementById('dropZone');
+        const contentDisplay = document.getElementById('contentDisplay');
+        const ejectBtn = document.getElementById('ejectBtn');
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const aboutContent = document.getElementById('aboutContent');
+            originalAboutContent = aboutContent.innerHTML;
+            
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('chip') === 'contact') {
+                setTimeout(() => {
+                    openContactChip();
+                }, 300);
+            }
+        });
+
+        function handleMessageMeClick() {
+            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+                openContactChip();
+            } else {
+                window.location.href = 'index.html?chip=contact';
+            }
+        }
+
+        function openContactChip() {
+            const contactCard = document.querySelector('.data-card[data-chip="contact"]');
+            if (contactCard && contactCard.classList.contains('removed') && currentLoadedChip && currentLoadedChip.type === 'contact') {
+                document.querySelector('.data-section').scrollIntoView({ behavior: 'smooth' });
+                return;
+            }
+            if (contactCard && !contactCard.classList.contains('removed')) {
+                if (currentLoadedChip) {
+                    ejectChip();
+                }
+                draggedChip = contactCard;
+                handleDrop(new Event('drop'));
+            }
+            document.querySelector('.data-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        dataCards.forEach(card => {
+            card.addEventListener('dragstart', handleDragStart);
+            card.addEventListener('dragend', handleDragEnd);
+            
+            card.addEventListener('click', function(e) {
+                const isMobileOrTablet = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 0 && window.matchMedia("(max-width: 1024px)").matches);
+                if (isMobileOrTablet && !dropZone.classList.contains('has-chip') && !this.classList.contains('removed')) {
+                    draggedChip = this;
+                    handleDrop(new Event('drop'));
+                }
+            });
+        });
+
+        dropZone.addEventListener('dragover', handleDragOver);
+        dropZone.addEventListener('dragleave', handleDragLeave);
+        dropZone.addEventListener('drop', handleDrop);
+
+        function handleDragStart(e) {
+            draggedChip = this;
+            this.classList.add('dragging');
+            e.dataTransfer.effectAllowed = 'move';
+            e.dataTransfer.setData('text/html', this.innerHTML);
+        }
+
+        function handleDragEnd(e) {
+            this.classList.remove('dragging');
+        }
+
+        function handleDragOver(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            e.dataTransfer.dropEffect = 'move';
+            
+            if (!dropZone.classList.contains('has-chip')) {
+                dropZone.classList.add('drag-over');
+            }
+            return false;
+        }
+
+        function handleDragLeave(e) {
+            dropZone.classList.remove('drag-over');
+        }
+
+        function handleDrop(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            }
+            
+            dropZone.classList.remove('drag-over');
+            
+            if (!dropZone.classList.contains('has-chip') && draggedChip) {
+                const chipType = draggedChip.dataset.chip;
+                loadChipContent(chipType);
+                
+                dropZone.classList.add('has-chip');
+                dropZone.innerHTML = draggedChip.innerHTML;
+                dropZone.setAttribute('draggable', 'true');
+                
+                dropZone.addEventListener('dragstart', handleDropZoneDragStart);
+                dropZone.addEventListener('dragend', handleDropZoneDragEnd);
+                
+                draggedChip.classList.add('removed');
+                draggedChip.setAttribute('draggable', 'false');
+                
+                ejectBtn.disabled = false;
+                
+                currentLoadedChip = {
+                    element: draggedChip,
+                    type: chipType
+                };
+            }
+            
+            return false;
+        }
+
+        function handleDropZoneDragStart(e) {
+            if (dropZone.classList.contains('has-chip')) {
+                isDraggingFromDropZone = true;
+                dropZone.classList.add('dragging');
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', 'ejecting');
+            }
+        }
+
+        function handleDropZoneDragEnd(e) {
+            dropZone.classList.remove('dragging');
+            
+            const rect = dropZone.getBoundingClientRect();
+            const isOutside = (
+                e.clientX < rect.left - 50 ||
+                e.clientX > rect.right + 50 ||
+                e.clientY < rect.top - 50 ||
+                e.clientY > rect.bottom + 50
+            );
+            
+            if (isDraggingFromDropZone && isOutside) {
+                ejectChip();
+            }
+            
+            isDraggingFromDropZone = false;
+        }
+
+        function loadChipContent(chipType) {
+            const noDataText = document.getElementById('noDataText');
+            const aboutContent = document.getElementById('aboutContent');
+            const contentDisplay = document.getElementById('contentDisplay');
+            
+            noDataText.style.display = 'none';
+            contentDisplay.classList.add('has-content');
+            
+            if (chipType === 'about') {
+                aboutContent.innerHTML = originalAboutContent;
+                aboutContent.classList.add('active');
+                
+                setTimeout(() => {
+                    initializeSkillGroups();
+                    initializeResumeSections(); 
+                }, 100);
+
+            } else if (chipType === 'resume') {
+                aboutContent.innerHTML = `
+                    <div class="resume-page">
+                        <div class="resume-header">
+                            <h1 class="resume-title">My Resume</h1>
+                            <button class="download-btn" onclick="window.open('images/home/resumelozano_pdf.pdf', '_blank')">
+                                <span class="download-icon">↓</span>
+                                Download PDF
+                            </button>
+                        </div>
+                        <div class="pdf-viewer-container">
+                            <img src="images/home/resumelozano_image.webp" alt="Resume" >
+                        </div>
+                    </div>
+                `;
+                aboutContent.classList.add('active');
+                
+                setTimeout(() => {
+                    initializeResumeSections();
+                }, 100);
+            } else if (chipType === 'contact') {
+                aboutContent.innerHTML = `
+                    <div class="contact-page">
+                        <h1 class="contact-title">Drop Me a Line</h1>
+                        <div class="contact-container">
+                            <div class="contact-form-section">
+                                <form class="contact-form">
+                                    <div class="form-group">
+                                        <label for="name">Name</label>
+                                        <input type="text" id="name" name="name" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="message">Message</label>
+                                        <textarea id="message" name="message" placeholder="Your message here..." rows="6" required></textarea>
+                                    </div>
+                                    <button type="submit" class="submit-btn">Send Message</button>
+                                </form>
+                            </div>
+                            <div class="contact-info-section">
+                                <h2 class="section-heading">Contact Information</h2>
+                                <div class="contact-info-item">
+                                    <div class="contact-icon">
+                                        <img src="images/home/contacticons/contactemail.png" alt="email icon in contact section" style="width:100%; height:auto;">
+                                    </div>
+                                    <div class="contact-details">
+                                        <h3>Email</h3>
+                                        <p><a href="mailto:hello@example.com">hello@example.com</a></p>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <div class="contact-icon">
+                                        <img src="images/home/contacticons/contactphone.png" alt="phone icon in contact section" style="width:100%; height:auto;">
+                                    </div>
+                                    <div class="contact-details">
+                                        <h3>Phone</h3>
+                                        <p>0921-316-7699</p>
+                                    </div>
+                                </div>
+                                <div class="contact-info-item">
+                                    <div class="contact-icon">
+                                        <img src="images/home/contacticons/contactlocate.png" alt="location icon in contact section" style="width:100%; height:auto;">
+                                    </div>
+                                    <div class="contact-details">
+                                        <h3>Location</h3>
+                                        <p>San Fransisco, Mabalacat, Pampanga</p>
+                                    </div>
+                                </div>
+                                <h2 class="section-heading social-heading">Social Media</h2>
+                                <div class="social-icons">
+                                    <div class="social-icon">
+                                    <a href="https://www.facebook.com/profile.php?id=100094220484168" target="_blank">
+                                        <img src="images/home/contacticons/contactfb.png" alt="facebook icon in contact section" style="width:100%; height:auto;">
+                                    </a>
+                                    </div>
+                                    <div class="social-icon">
+                                    <a href="https://github.com/LozanoHAU" target="_blank">
+                                        <img src="images/home/contacticons/contactgithub.png" alt="github icon in contact section" style="width:100%; height:auto;">
+                                    </a>
+                                    </div>
+                                    <div class="social-icon" style="background:none;">
+                                    <a href="https://www.linkedin.com/in/aaron-daniel-lozano-20412b359/" target="_blank">
+                                        <img src="images/home/contacticons/contactlinkin.png" alt="linkIn icon in contact section" style="width:100%; height:auto;">
+                                    </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                aboutContent.classList.add('active');
+                
+                setTimeout(() => {
+                    const form = document.querySelector('.contact-form');
+                    if (form) {
+                        form.addEventListener('submit', (e) => {
+                            e.preventDefault();
+                            
+                            const submitBtn = form.querySelector('.submit-btn');
+                            const originalText = submitBtn.innerText;
+                            submitBtn.innerText = 'Sending...'; 
+
+                            const formData = {
+                                name: document.getElementById('name').value,
+                                email: document.getElementById('email').value,
+                                message: document.getElementById('message').value
+                            };
+
+                            fetch("https://formsubmit.co/ajax/l0zd4n3.aa@gmail.com", {
+                                method: "POST",
+                                headers: { 
+                                    'Content-Type': 'application/json',
+                                    'Accept': 'application/json'
+                                },
+                                body: JSON.stringify(formData)
+                            })
+                            .then(response => response.json())
+                            .then(data => {
+                                alert('Thank you! Your message has been sent.');
+                                form.reset();
+                            })
+                            .catch(error => {
+                                console.error('Error:', error);
+                                alert('Oops! Something went wrong. Please try again.');
+                            })
+                            .finally(() => {
+                                submitBtn.innerText = originalText;
+                            });
+                        });
+                    }
+                }, 100);
+            }
+        }
+
+        function ejectChip() {
+            if (currentLoadedChip) {
+                const noDataText = document.getElementById('noDataText');
+                const aboutContent = document.getElementById('aboutContent');
+                const contentDisplay = document.getElementById('contentDisplay');
+                
+                dropZone.classList.remove('has-chip');
+                dropZone.innerHTML = '<div class="chip-text">INSERT CHIP<br/>HERE</div>';
+                dropZone.setAttribute('draggable', 'false');
+                
+                dropZone.removeEventListener('dragstart', handleDropZoneDragStart);
+                dropZone.removeEventListener('dragend', handleDropZoneDragEnd);
+                
+                currentLoadedChip.element.classList.remove('removed');
+                currentLoadedChip.element.setAttribute('draggable', 'true');
+                
+                aboutContent.classList.remove('active');
+                contentDisplay.classList.remove('has-content');
+                noDataText.style.display = 'block';
+                
+                aboutContent.innerHTML = originalAboutContent;
+                
+                ejectBtn.disabled = true;
+                
+                currentLoadedChip = null;
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function initializeSkillGroups() {
+            document.querySelectorAll('.skill-group h3').forEach(header => {
+                header.addEventListener('click', function() {
+                    const skillGroup = this.parentElement;
+                    skillGroup.classList.toggle('collapsed');
+                });
+            });
+        }
+
+        function initializeResumeSections() {
+            document.querySelectorAll('.resume-section-title').forEach(title => {
+                title.addEventListener('click', function() {
+                    const resumeSection = this.parentElement;
+                    resumeSection.classList.toggle('collapsed');
+                });
+            });
+        }
+
+        let lastScrollTop = 0;
+        const navbar = document.querySelector('nav');
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercentage = (scrollTop / pageHeight) * 100;
+            
+            if (scrollPercentage > 50 && scrollTop > lastScrollTop) {
+                navbar.classList.add('hidden');
+            } 
+            else if (scrollTop < lastScrollTop || scrollPercentage <= 50) {
+                navbar.classList.remove('hidden');
+            }
+            
+            lastScrollTop = scrollTop;
+        });
+
+        updateCarousel();
+    </script>
+</body>
+</html>
