@@ -14,7 +14,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Figtree:ital,wght@0,300..900;1,300..900&family=Finlandica:ital,wght@0,400..700;1,400..700&family=National+Park:wght@200..800&family=Pompiere&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navfoot.css">
-    <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#2e3346;color:#fff;background-image:url("images/bodybackgroundofficial.webp");background-position:center;background-repeat:no-repeat;background-size:cover;background-attachment:fixed}.blog-intro{padding:60px 40px 40px}.blog-intro-container{max-width:1320px;margin:0 auto}.blog-intro-title{font-family:'Figtree','Courier New',Courier,monospace;font-size:4rem;font-weight:700;margin-bottom:20px;color:#58dc9a}.blog-intro-text{font-size:1.1rem;line-height:1.6;color:#fff;max-width:1900px;margin-bottom:40px}.blog-intro-divider{width:100%;height:2px;background:#58dc9a}.blog-card-section{padding:20px;padding-bottom:80px}.blog-card{max-width:1200px;margin:0 auto;border-radius:30px;padding:60px;box-shadow:8px 8px 0 rgba(88,220,154,.4);transition:transform .3s ease,box-shadow .3s ease;border:1.5px solid rgba(88,220,154,.4);background:rgba(88,220,154,.08)}.blog-card:hover{transform:translateY(-2px);box-shadow:10px 10px 0 rgba(88,220,154,.6)}.blog-card-title,.blog-card-title a{font-family:'Figtree','Courier New',Courier,monospace;font-size:2.5rem;font-weight:600;line-height:1.2;margin-bottom:30px;color:#fff;text-decoration:none}.blog-card-title a:hover{text-decoration:underline}.blog-card-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;flex-wrap:wrap;gap:20px}.blog-tags{display:flex;gap:15px;flex-wrap:wrap}.blog-tag{padding:8px 24px;border:2px solid #fff;border-radius:50px;font-size:1.1rem;background:0 0;color:#fff;transition:all .3s ease}.blog-tag:hover{background:#5bce95;color:#fff;border-color:#5bce95}.blog-date{font-size:1.1rem;color:#c8f5e1}.blog-card-divider{width:100%;height:2px;background:#ccc;margin-bottom:30px}.blog-card-text{font-size:1.1rem;line-height:1.6;color:#c8f5e1}@media (max-width:768px){.blog-intro{padding:20px;padding-top:40px}.blog-card{padding:40px 30px;margin-bottom:-30px;box-shadow:4px 4px 0 rgba(88,220,154,.4)}.blog-card-meta{justify-content:left;gap:2px}.blog-intro-title{font-size:32px}.blog-intro-text{font-size:1rem}.blog-card-title a{font-size:26.8px;line-height: 0px;}.blog-card-text{font-size:14.4px}.blog-tag{display:none}.blog-date{font-size:14.4px}}</style>
+    <style>*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Inter',sans-serif;background:#2e3346;color:#fff;background-image:url("images/bodybackgroundofficial.webp");background-position:center;background-repeat:no-repeat;background-size:cover;background-attachment:fixed}.blog-intro{padding:60px 40px 40px}.blog-intro-container{max-width:1320px;margin:0 auto}.blog-intro-title{font-family:'Figtree','Courier New',Courier,monospace;font-size:4rem;font-weight:700;margin-bottom:20px;color:#58dc9a}.blog-intro-text{font-size:1.1rem;line-height:1.6;color:#fff;max-width:1900px;margin-bottom:40px}.blog-intro-divider{width:100%;height:2px;background:#58dc9a}.blog-card-section{padding:20px;padding-bottom:80px}.blog-card{border-radius:30px;padding:60px;box-shadow:8px 8px 0 rgba(88,220,154,.4);transition:transform .3s ease,box-shadow .3s ease;border:1.5px solid rgba(88,220,154,.4);background:rgba(88,220,154,.08)}.blog-card:hover{transform:translateY(-2px);box-shadow:10px 10px 0 rgba(88,220,154,.6)}.blog-card-title,.blog-card-title a{font-family:'Figtree','Courier New',Courier,monospace;font-size:2rem;font-weight:600;line-height:1.2;margin-bottom:20px;color:#fff;text-decoration:none;display:block}.blog-card-title a:hover{text-decoration:underline}.blog-card-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:12px}.blog-date{font-size:1rem;color:#c8f5e1}.blog-card-divider{width:100%;height:2px;background:#ccc;margin-bottom:20px}.blog-card-text{font-size:1rem;line-height:1.6;color:#c8f5e1}
+
+    .blog-layout{display:grid;grid-template-columns:1fr 320px;gap:24px;max-width:1320px;margin:0 auto;align-items:start}
+    .blog-grid{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:start}
+    .blog-sidebar{border-radius:30px;padding:40px 36px;box-shadow:8px 8px 0 rgba(88,220,154,.4);border:1.5px solid rgba(88,220,154,.4);background:rgba(88,220,154,.08);position:sticky;top:90px;display:flex;flex-direction:column;gap:36px}
+    .sidebar-label{font-family:'Figtree','Courier New',Courier,monospace;font-size:1.2rem;font-weight:700;color:#58dc9a;margin-bottom:14px;letter-spacing:.02em}
+    .sidebar-search{width:100%;padding:10px 16px;border-radius:50px;border:1.5px solid rgba(88,220,154,.5);background:rgba(88,220,154,.08);color:#fff;font-family:'Inter',sans-serif;font-size:1rem;outline:none;transition:border-color .3s}
+    .sidebar-search::placeholder{color:rgba(255,255,255,.45)}
+    .sidebar-search:focus{border-color:#58dc9a}
+    .category-list{display:flex;flex-direction:column;gap:10px}
+    .category-btn{display:flex;align-items:center;gap:12px;padding:10px 18px;border-radius:50px;border:1.5px solid rgba(88,220,154,.4);background:0 0;color:#c8f5e1;font-family:'Inter',sans-serif;font-size:.95rem;cursor:pointer;transition:all .3s ease;text-align:left}
+    .category-btn i{font-size:1rem;color:#58dc9a;width:18px;text-align:center}
+    .category-btn:hover,.category-btn.active{background:rgba(88,220,154,.2);border-color:#58dc9a;color:#fff}
+    .category-btn.active i{color:#fff}
+    .date-filter-group{display:flex;flex-direction:column;gap:10px}
+    .date-filter-row{display:flex;flex-direction:column;gap:4px}
+    .date-filter-row span{font-size:.8rem;color:rgba(200,245,225,.7);padding-left:4px}
+    .sidebar-date{width:100%;padding:9px 14px;border-radius:50px;border:1.5px solid rgba(88,220,154,.4);background:rgba(88,220,154,.08);color:#c8f5e1;font-family:'Inter',sans-serif;font-size:.9rem;outline:none;transition:border-color .3s;color-scheme:dark}
+    .sidebar-date:focus{border-color:#58dc9a}
+    .card-category-icons{display:flex;gap:10px;margin-bottom:16px}
+    .card-cat-icon{width:34px;height:34px;border-radius:50%;background:rgba(88,220,154,.18);border:1.5px solid rgba(88,220,154,.5);display:flex;align-items:center;justify-content:center;transition:background .3s}
+    .card-cat-icon i{font-size:.85rem;color:#58dc9a}
+    .card-cat-icon:hover{background:rgba(88,220,154,.35)}
+    .blog-card.hidden{display:none}
+
+    @media(max-width:1024px){
+        .blog-layout{grid-template-columns:1fr}
+        .blog-sidebar{position:static;top:auto;order:-1;margin:20px}
+        .category-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    }
+    @media(max-width:768px){
+        .blog-intro{padding:20px;padding-top:40px}
+        .blog-grid{grid-template-columns:1fr}
+        .blog-card{padding:30px 24px;box-shadow:4px 4px 0 rgba(88,220,154,.4)}
+        .blog-intro-title{font-size:32px}
+        .blog-intro-text{font-size:1rem}
+        .blog-card-title a{font-size:1.4rem}
+        .blog-card-text{font-size:14.4px}
+        .blog-tag{display:none}
+        .blog-date{font-size:14.4px}
+        .blog-sidebar{margin:20px}
+        .category-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    }</style>
 </head>
 <body>
     <nav>
@@ -28,79 +70,182 @@
         </div>
     </nav>
 
-    <main>
-        <section class="blog-intro">
-            <div class="blog-intro-container">
-                <h1 class="blog-intro-title">Want To Hear My Thoughts?</h1>
-                <p class="blog-intro-text">Feel free to browse around and see what's been on my mind lately. Here you'll find my unfiltered thoughts on graphic design, coding, and general advice for building better digital experiences.</p>
-                <div class="blog-intro-divider"></div>
-            </div>
-        </section>
+<main>
+    <section class="blog-intro">
+        <div class="blog-intro-container">
+            <h1 class="blog-intro-title">Want To Hear My Thoughts?</h1>
+            <p class="blog-intro-text">Feel free to browse around and see what's been on my mind lately. Here you'll find my unfiltered thoughts on graphic design, coding, and general advice for building better digital experiences.</p>
+            <div class="blog-intro-divider"></div>
+        </div>
+    </section>
 
-        <section class="blog-card-section">
-            <div class="blog-card">
-                <h2 class="blog-card-title"><a href="blogs/blog1.html">Good Images Makes For A Good Website</a></h2>
-                <div class="blog-card-meta">
-                    <div class="blog-tags">
-                        <span class="blog-tag">Advice</span>
-                        <span class="blog-tag">Front-End</span>
-                        <span class="blog-tag">Graphic Design</span>
-                        <span class="blog-tag">Quality of Life</span>
+    <section class="blog-card-section">
+        <div class="blog-layout">
+            <div class="blog-grid" id="blogGrid">
+                <div class="blog-card" data-categories="Quality of Life" data-date="2026-02-20">
+                    <div class="card-category-icons">
+                        <div class="card-cat-icon" title="Quality of Life"><i class="fas fa-heart"></i></div>
+                    </div><br>
+                    <h2 class="blog-card-title"><a href="blogs/blog1.html">Good Images Makes For A Good Website</a></h2>
+                    <div class="blog-card-meta">
+                        <div class="blog-date">February 20, 2026</div>
                     </div>
-                    <div class="blog-date">February 20, 2026</div>
+                    <div class="blog-card-divider"></div>
+                    <p class="blog-card-text">Attention spans are shorter than ever nowadays. Lenghty words won't count it anymore, it's all about the visuals that can make or break user engagement.</p>
                 </div>
-                <div class="blog-card-divider"></div>
-                <p class="blog-card-text">Attention spans are shorter than ever nowadays. Lenghty words won't count it anymore, it's all about the visuals that can make or break user engagement.</p>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="footer-container">
-            <div class="footer-left">
-                <h3>l0zd4n3.aa@gmail.com</h3>
-                <div class="social-links">
-                    <a href="https://github.com/LozanoHAU" class="footer-social-icon " target="_blank"><img src="images/footergithub.webp" alt="" style="width:100%; height:auto;"></a>
-                    <a href="https://www.facebook.com/profile.php?id=100094220484168" target="_blank" class="footer-social-icon "><img src="images/footerfb.webp" alt="" style="width:100%; height:auto;"></a>
-                    <a href="https://www.linkedin.com/in/aaron-daniel-lozano-20412b359/" target="_blank" class="footer-social-icon "><img src="images/footerlinkin.webp" alt="" style="width:100%; height:auto;"></a>
+            <aside class="blog-sidebar">
+                <div class="sidebar-block">
+                    <div class="sidebar-label">Title Search</div>
+                    <input class="sidebar-search" type="text" id="searchInput" placeholder="Search posts...">
                 </div>
-            </div>
-            
-            <div class="footer-right">
-                <button class="message-btn" onclick="handleMessageMeClick()">Message Me</button>
-                <p class="footer-text">Let’s discuss your next big project and turn your creative ideas into reality.</p>
+
+                <div class="sidebar-block">
+                    <div class="sidebar-label">Category Filter</div>
+                    <div class="category-list">
+                        <button class="category-btn" data-cat="Advice"><i class="fas fa-lightbulb"></i> Advice</button>
+                        <button class="category-btn" data-cat="Front-End"><i class="fas fa-code"></i> Front-End</button>
+                        <button class="category-btn" data-cat="Graphic Design"><i class="fas fa-paint-brush"></i> Graphic Design</button>
+                        <button class="category-btn" data-cat="Quality of Life"><i class="fas fa-heart"></i> Quality of Life</button>
+                    </div>
+                </div>
+
+                <div class="sidebar-block">
+                    <div class="sidebar-label">Date Filter</div>
+                    <div class="date-filter-group">
+                        <div class="date-filter-row">
+                            <span>From</span>
+                            <input class="sidebar-date" type="date" id="dateFrom">
+                        </div>
+                        <div class="date-filter-row">
+                            <span>To</span>
+                            <input class="sidebar-date" type="date" id="dateTo">
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-left">
+            <h3>l0zd4n3.aa@gmail.com</h3>
+            <div class="social-links">
+                <a href="https://github.com/LozanoHAU" class="footer-social-icon" target="_blank"><img src="images/footergithub.webp" alt="" style="width:100%; height:auto;"></a>
+                <a href="https://www.facebook.com/profile.php?id=100094220484168" target="_blank"class="footer-social-icon "><img src="images/footerfb.webp" alt="" style="width:100%; height:auto;"></a>
+                <a href="https://www.linkedin.com/in/aaron-daniel-lozano-20412b359/" target="_blank" class="footer-social-icon "><img src="images/footerlinkin.webp" alt="" style="width:100%; height:auto;"></a>
             </div>
         </div>
-    </footer>
-
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-    <script>
-        let lastScrollTop = 0;
-        const navbar = document.querySelector('nav');
         
-        window.addEventListener('scroll', function() {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const scrollPercentage = (scrollTop / pageHeight) * 100;
-            
-            if (scrollPercentage > 50 && scrollTop > lastScrollTop) {
-                navbar.classList.add('hidden');
-            } 
-            else if (scrollTop < lastScrollTop || scrollPercentage <= 50) {
-                  navbar.classList.remove('hidden');
-            }
-            
-            lastScrollTop = scrollTop;
-        });
+        <div class="footer-right">
+            <button class="message-btn" onclick="handleMessageMeClick()">Message Me</button>
+            <p class="footer-text">Let's discuss your next big project and turn your creative ideas into reality.</p>
+        </div>
+    </div>
+</footer>
 
-        function handleMessageMeClick() {
-            if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
-                openContactChip();
-            } else {
-                window.location.href = 'index.html?chip=contact';
-            }
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
+    let lastScrollTop = 0;
+    const navbar = document.querySelector('nav');
+
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const pageHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercentage = (scrollTop / pageHeight) * 100;
+        if (scrollPercentage > 50 && scrollTop > lastScrollTop) {
+            navbar.classList.add('hidden');
+        } else if (scrollTop < lastScrollTop || scrollPercentage <= 50) {
+            navbar.classList.remove('hidden');
         }
-    </script>
-</body>
+        lastScrollTop = scrollTop;
+    });
 
+    function handleMessageMeClick() {
+        if (window.location.pathname.endsWith('index.html') || window.location.pathname === '/' || window.location.pathname.endsWith('/')) {
+            openContactChip();
+        } else {
+            window.location.href = 'index.html?chip=contact';
+        }
+    }
+
+    const cards = document.querySelectorAll('.blog-card');
+    const searchInput = document.getElementById('searchInput');
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const dateFrom = document.getElementById('dateFrom');
+    const dateTo = document.getElementById('dateTo');
+    let activeCategories = new Set();
+
+    function filterCards() {
+        const query = searchInput.value.toLowerCase().trim();
+        const from = dateFrom.value ? new Date(dateFrom.value) : null;
+        const to = dateTo.value ? new Date(dateTo.value) : null;
+
+        cards.forEach(card => {
+            const title = card.querySelector('.blog-card-title').textContent.toLowerCase();
+            const cats = card.dataset.categories.split(',');
+            const cardDate = new Date(card.dataset.date);
+
+            const matchSearch = !query || title.includes(query);
+            const matchCat = activeCategories.size === 0 || [...activeCategories].every(c => cats.includes(c));
+            const matchFrom = !from || cardDate >= from;
+            const matchTo = !to || cardDate <= to;
+
+            card.classList.toggle('hidden', !(matchSearch && matchCat && matchFrom && matchTo));
+        });
+    }
+
+    searchInput.addEventListener('input', filterCards);
+    dateFrom.addEventListener('change', filterCards);
+    dateTo.addEventListener('change', filterCards);
+
+    categoryBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const cat = btn.dataset.cat;
+            if (activeCategories.has(cat)) {
+                activeCategories.delete(cat);
+                btn.classList.remove('active');
+            } else {
+                activeCategories.add(cat);
+                btn.classList.add('active');
+            }
+            filterCards();
+        });
+    });
+
+function animateTyping(elements, immediate = false) {
+    elements.forEach(el => {
+        if (el.typingInterval) clearInterval(el.typingInterval);
+        if (el.typingTimeout) clearTimeout(el.typingTimeout);
+        
+        const text = el.dataset.origText || el.textContent;
+        el.dataset.origText = text;
+        el.textContent = '';
+       
+        const len = text.length;
+        let charsPerTick = len > 200 ? 3 : len > 50 ? 2 : 1;
+
+        let i = 0;
+        const delay = immediate ? 0 : Math.random() * 1200;
+        
+        el.typingTimeout = setTimeout(() => {
+            el.typingInterval = setInterval(() => {
+                if (i < len) {
+                    el.textContent += text.slice(i, i + charsPerTick);
+                    i += charsPerTick;
+                } else {
+                    clearInterval(el.typingInterval);
+                }
+            }, 15);
+        }, delay);
+    });
+}
+
+animateTyping(document.querySelectorAll('.blog-intro-title, .blog-intro-text'), true);
+animateTyping(document.querySelectorAll('.blog-card-title a, .blog-card-text'), false);
+</script>
+</body>
 </html>
