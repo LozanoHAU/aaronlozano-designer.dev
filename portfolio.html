@@ -44,6 +44,7 @@
                     <option value="1">Hearing First</option>
                     <option value="2">Lumière</option>
                     <option value="3">Paramalan</option>
+                    <option value="4">Arreglado</option>
                 </select>
             </div>
             
@@ -77,6 +78,14 @@
                     <label for="project4">
                         <h3>Paramalan</h3>
                         <p>A semester-long business project to build and launch a WordPress website for a gown rental shop in Pampanga, focused on establishing their SEO presence from the ground up.</p>
+                    </label>
+                </div>
+
+                <div class="project-item">
+                    <input type="radio" name="project" id="project5">
+                    <label for="project5">
+                        <h3>Arreglado</h3>
+                        <p>A web application designed to help barangay administrators streamline how they manage, promote, and communicate community events to locals.</p>
                     </label>
                 </div>
             </div>
@@ -182,6 +191,17 @@
                 "I handled most of the development using custom HTML blocks within WordPress, giving the site a look beyond what standard themes offer. The project involved on-page SEO practices throughout from structured content and metadata to image optimization and keyword-targeted blog posts."
             ],
             tools: ["WordPress", "Elementor", "Javascript", "CSS", "Yoast SEO", "Google Search Console"]
+        },
+        {
+            title: "Arreglado",
+            images: ["images/portfolio/arreglado1.webp", "images/portfolio/arreglado2.webp"],
+            liveLink: "https://arregladopandacaqui.netlify.app/client/eventpage",
+            repoLink: "https://github.com/LozanoHAU/arreglado-official",
+            fullDescription: [
+                "Arreglado, a project intended for Barangay Pandacaqui in Mexico, Pampanga, serves as an all-in-one platform where officials can build fully customized event pages, schedule them on a calendar, and monitor resident registrations — all without needing any technical background or external tools.",
+                "It was built using Angular 21 with standalone components and the Signals API for reactive state management. Styling was done entirely in custom CSS with a dynamic HTML/CSS site renderer powering the live event page output."
+            ],
+            tools: ["Angular v21", "Netlify", "HTML & CSS", "TypeScript", "Node.js"]
         }
     ];
     
@@ -239,7 +259,7 @@
         
         const tagsContainer = detailSection.querySelector('.project-tags');
         tagsContainer.innerHTML = `
-            <a href="${project.liveLink}" target="_blank"><button class="tag tag-filled">Live Site</button></a>
+            ${project.liveLink ? `<a href="${project.liveLink}" target="_blank"><button class="tag tag-filled">Live Site</button></a>` : ''}
             ${project.repoLink ? `<a href="${project.repoLink}" target="_blank"><button class="tag tag-filled">Repository</button></a>` : ''}
         `;
         
